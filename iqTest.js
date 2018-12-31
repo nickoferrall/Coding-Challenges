@@ -18,5 +18,5 @@ function iqTest(numbers) {
   }
 }
 
-// iqTest('2 4 7 8 10');
+iqTest('2 4 7 8 10');
 iqTest('1 2 2');

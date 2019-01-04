@@ -1,5 +1,5 @@
 function toWeirdCase(string) {
-  const word = string
+  const answer = string
     .split(' ')
     .map(word =>
       word

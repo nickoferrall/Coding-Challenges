@@ -1,18 +1,17 @@
 function equalSides(arr) {
-  let left = 0;
-  let right = 0;
-  let reversed = arr.reverse();
-  //   let middle = arr[Math.round((arr.length - 1) / 2)];
-  let median = Math.round(arr.length / 2);
-  for (let i = 0; i < arr.length; i++) {
-    // left += arr[i];
-    // right += reversed[i];
-    // if (left === right) return left, right;
-    return arr.reduce((acc, currentVal) => {
+  function sumSide(myArr) {
+    return myArr.reduce((acc, currentVal) => {
       return acc + currentVal;
-    }, median);
+    }, 0);
   }
-  return median;
+  for (let i = 1; i < arr.length; i++) {
+    let a = arr.slice(0, i);
+    let b = arr.slice(i + 1, arr.length);
+    if (sumSide(a) === sumSide(b)) {
+      return i;
+    }
+  }
+  return -1;
 }
 
 console.log(equalSides([1, 1, 1, 4, 2, 1]));

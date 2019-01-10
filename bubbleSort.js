@@ -23,13 +23,9 @@ function bubbleSort(arr) {
     return sortedArr;
   }
   let changingArr = sortArr(arr);
-  for (let i = 0; i < 10; i++) {
-    if (changingArr == sortArr(changingArr)) {
-      return changingArr;
-    } else {
-      changingArr = sortArr(changingArr);
-    }
-  }
+  do {
+    changingArr = sortArr(changingArr);
+  } while (changingArr === sortArr(changingArr));
   return changingArr;
 }
 

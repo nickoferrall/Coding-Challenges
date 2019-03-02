@@ -4,11 +4,8 @@ function rotateImage(arr) {
   let newArr = [];
   let test = [];
   for (let i = 0; i < arr.length; i++) {
-    //   newArr.splice(i, 0, arr[i][arr.length - 1]);
     let tempArr = arr[i];
-    // console.log(tempArr);
     for (let n = 1; n < arr.length; n++) {
-      //   newArr.splice(i, 0, arr[i][arr.length - n]);
       test.push(arr[i][arr.length - n]);
     }
   }

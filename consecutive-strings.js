@@ -3,7 +3,6 @@ function longestConsecutive(arr, k) {
   let longestString = '';
   for (let i = 0; i < arr.length; i++) {
     const temp = arr.slice(i, i + k).join('');
-    console.log(temp)
     if (temp.length > longestString.length) {
       longestString = temp;
     }

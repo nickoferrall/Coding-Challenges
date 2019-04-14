@@ -104,9 +104,4 @@ graph.addEdge('D', 'E');
 graph.addEdge('D', 'F');
 graph.addEdge('E', 'F');
 
-// graph.removeEdge('London', 'Medellin');
-// console.log(graph);
-// graph.removeVertex('London');
-// console.log(graph);
-
 console.log(graph.breadthFirst('D'));

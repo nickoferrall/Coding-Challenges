@@ -17,7 +17,6 @@ const sampleInput = [0, 0, 1, 0, 0, 1, 0];
 
 function jumpingOnClouds(c) {
   let count = 0;
-  console.log('len-->', c.length);
   for (let index = 0; index < c.length; index++) {
     if (c[index + 2] == 0) {
       index += 1;

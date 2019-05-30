@@ -25,12 +25,10 @@ function permutation(str1, str2) {
   }
   for (let j = 0; j < str2.length; j++) {
     if (str1Dict[str2Arr[j]] === undefined) return false;
-    {
-      if (str2Dict[str2Arr[j]]) {
-        str2Dict[str2Arr[j]] += 1;
-      } else {
-        str2Dict[str2Arr[j]] = 1;
-      }
+    if (str2Dict[str2Arr[j]]) {
+      str2Dict[str2Arr[j]] += 1;
+    } else {
+      str2Dict[str2Arr[j]] = 1;
     }
   }
   for (let index = 0; index < Object.values(str1Dict).length; index++) {

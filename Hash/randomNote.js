@@ -38,6 +38,7 @@ function checkMagazine(magazine, note) {
     for (let mIndex = 0; mIndex < magazine.length; mIndex++) {
       console.log(
         'At the beginning -->',
+        mObj
         mIndex,
         magazine[mIndex],
         Object.keys(mObj)[j]

@@ -33,4 +33,6 @@ var twoSum = function(nums, target) {
   return false;
 };
 
-console.log(twoSum(nums, target));
+// console.log(twoSum(nums, target));
+
+console.log(Number(true));

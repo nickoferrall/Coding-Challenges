@@ -35,12 +35,12 @@ class LinkedList {
 class BT {
   constructor() {
     this.values = [3, 5, 9, 6, 8, 20, 10, null, null, 9];
-    this.linked = new LinkedList();
+    // this.linked = new LinkedList();
   }
   BFS() {
     if (this.values.length === 0) return null;
     let index = 0;
-    this.linked.push(this.values[index]);
+    const firstRow = this.linked.push(this.values[index]);
     console.log('This list...', this.linked);
   }
 }

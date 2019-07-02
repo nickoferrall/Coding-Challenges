@@ -1,16 +1,13 @@
 const s = 'cbaebabacd';
 const p = 'abc';
 
-// object of p
-// counter of correct letters
-// index arr
+// create obj
 // for loop through s
-// if s is in object of p, keep checking for the remaining letters in
-// len of p
-// if count of correct letters = len, add to array: i - correct letters
-// else, count of correct letters = 0
+// if a letter is in p obj, begin new for loop
+// if all the letters are in the obj the same number of times,
+// add index. else, break and I moves one
 
-var findAnagrams = function(s, p) {
+function createObj(p) {
   const obj = {};
   for (let i = 0; i < p.length; i++) {
     if (obj[p[i]]) {
@@ -19,16 +16,41 @@ var findAnagrams = function(s, p) {
       obj[p[i]] = 1;
     }
   }
-  let correctCount = 0;
-  let indexes = [];
+  return obj;
+}
+
+var findAnagrams = function(s, p) {
+  const obj = createObj(p);
+  const indexes = [];
   for (let i = 0; i < s.length; i++) {
     if (obj[s[i]]) {
-      correctCount += 1;
-      if (correctCount === p.length) {
-        indexes.push(i - (correctCount - 1));
+      let tempObj = {};
+      tempObj[s[i]] = 1;
+      for (let j = i + 1; j < i + p.length; j++) {
+        if (obj[s[j]] && j === i + p.length - 1) {
+          tempObj[s[i]] ? (tempObj[s[i]] += 1) : (tempObj[s[i]] = 1);
+          for (let index = 0; index < p.length; index++) {
+            if (obj[p[index]] !== tempObj[p[index]]) {
+              break;
+            }
+          }
+          tempObj = createObj(p);
+          indexes.push(i);
+          i = j;
+        } else if (obj[s[j]]) {
+          if (tempObj[s[j]]) {
+            tempObj[s[j]] += 1;
+            if (tempObj[s[j]] > obj[s[j]]) {
+              tempObj = createObj(p);
+              break;
+            }
+          } else {
+            tempObj[s[j]] = 1;
+          }
+        } else {
+          break;
+        }
       }
-    } else {
-      correctCount = 0;
     }
   }
   return indexes;

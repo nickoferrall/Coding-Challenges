@@ -17,33 +17,13 @@ const s = '{[]}'; // true
 // loop through the split string pushing each bracket to the array
 // if the closing bracket is not the top item on the stack, return false
 
-// class brackets {
-//   constructor() {
-//     this.bracketStack = [];
-//   }
-//   addBracket(bracket) {
-//     const brackets = { ')': 1, '(': 1, '}': 1, '{': 1, ']': 1, '[': 1 };
-//     if (!brackets[bracket]) return false;
-//     this.bracketStack.push(bracket);
-//   }
-//   removebracket() {
-//     if (this.bracketStack.length === 0) {
-//       return false;
-//     }
-//     const popped = this.bracketStack.pop();
-//     return popped;
-//   }
-// }
-
 var isValid = function(s) {
   if (s.length === 0) return true;
   if (s.length === 1) return false;
   const bracketsStack = [];
   const splitStr = s.split('');
   const openBrackets = { ')': '(', '}': '{', ']': '[' };
-  const bracketOptions = { ')': 1, '(': 1, '}': 1, '{': 1, ']': 1, '[': 1 };
   for (let i = 0; i < splitStr.length; i++) {
-    if (!bracketOptions[splitStr[1]]) return false;
     // if it's an open bracket
     if (!openBrackets[splitStr[i]]) {
       bracketsStack.push(splitStr[i]);

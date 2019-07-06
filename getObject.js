@@ -31,4 +31,4 @@ console.log(getObj(object, ['a', '0', 'b', 'c']));
 console.log('------------------');
 console.log(getObj(object, 'a[0].b.c'));
 console.log('------------------');
-console.log(getObj(object, 'a.b.c', 'default'));
+console.log(getObj(object, 'a.b.cx', 'default'));
